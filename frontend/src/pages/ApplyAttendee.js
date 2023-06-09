@@ -1,17 +1,20 @@
 import React from "react";
 import Layout from "../components/Layout";
-import { Col, Form, Input, Row, TimePicker, message } from "antd";
+import { Col, Form, Input, Row, Select, TimePicker, message } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { showLoading, hideLoading } from "../redux/features/alertSlice";
 import axios from "axios";
 import moment from "moment";
+import { Option } from "antd/es/mentions";
 const ApplyAttendee = () => {
   const { user } = useSelector((state) => state.user);
-
+  const [form] = Form.useForm();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  //handle form
+  const navigate = useNavigate(); 
+  // On Gender Change 
+  
+  //handle form 
   const handleFinish = async (values) => {
     try {
       dispatch(showLoading());
@@ -85,17 +88,23 @@ const ApplyAttendee = () => {
             >
               <Input type="email" placeholder="your email address" />
             </Form.Item>
-          </Col> 
+          </Col>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
-              label="Gender"
               name="gender"
-              required
+              label="Gender"
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your gender" />
+              <Select
+                placeholder="Select a option and change input text above"
+                allowClear
+              >
+                <Option value="male">male</Option>
+                <Option value="female">female</Option>
+                <Option value="other">other</Option>
+              </Select>
             </Form.Item>
-          </Col> 
+          </Col>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
               label="Father Name"
@@ -105,7 +114,7 @@ const ApplyAttendee = () => {
             >
               <Input type="text" placeholder="your father name" />
             </Form.Item>
-          </Col> 
+          </Col>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
               label="Mother Name"
@@ -115,15 +124,19 @@ const ApplyAttendee = () => {
             >
               <Input type="text" placeholder="your Mother name" />
             </Form.Item>
-          </Col> 
+          </Col>
           <Col xs={24} md={24} lg={8}>
-            <Form.Item label="Aadhar Number" name="aadhar" > 
+            <Form.Item label="Aadhar Number" name="aadhar">
               <Input type="text" placeholder="your Aadhar Numbar" />
             </Form.Item>
-          </Col> 
+          </Col>
           <Col xs={24} md={24} lg={8}>
-            <Form.Item label="Age" name="age" required
-              rules={[{ required: true }]}>
+            <Form.Item
+              label="Age"
+              name="age"
+              required
+              rules={[{ required: true }]}
+            >
               <Input type="text" placeholder="your Age" />
             </Form.Item>
           </Col>
@@ -136,7 +149,7 @@ const ApplyAttendee = () => {
             >
               <Input type="text" placeholder="your clinic address" />
             </Form.Item>
-          </Col> 
+          </Col>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
               label="Marital Status"
@@ -146,26 +159,32 @@ const ApplyAttendee = () => {
             >
               <Input type="text" placeholder="your marital status" />
             </Form.Item>
-          </Col> 
-          <Col xs={24} md={24} lg={8}>
-            <Form.Item label="Number of Children" name="children" > 
-              <Input type="text" placeholder="your number of children" />
-            </Form.Item>
-          </Col>  
+          </Col>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
-              label="Session Id"
-              name="sessionId"
+              label="Annual Income"
+              name="income"
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your session Id" />
+             <Select
+                placeholder="Select a option"
+                allowClear
+              >
+                <Option value="Less than 50,000">Less than 50,000</Option>
+                <Option value="More than 50,000">More than 50,000</Option>
+              </Select>
             </Form.Item>
-          </Col> 
-        </Row> 
+          </Col>
+          <Col xs={24} md={24} lg={8}>
+            <Form.Item label="Number of Children" name="children">
+              <Input type="text" placeholder="your number of children" />
+            </Form.Item>
+          </Col>
+        </Row>
         <h4>Educational Details :</h4>
         <Row gutter={20}>
-        <Col xs={24} md={24} lg={8}>
+          <Col xs={24} md={24} lg={8}>
             <Form.Item
               label="Qualification"
               name="qualification"
@@ -174,18 +193,12 @@ const ApplyAttendee = () => {
             >
               <Input type="text" placeholder="your qualification" />
             </Form.Item>
-          </Col>  
+          </Col>
           <Col xs={24} md={24} lg={8}>
-            <Form.Item
-              label="Child Education"
-              name="childEducation"
-              required
-              rules={[{ required: true }]}
-            >
+            <Form.Item label="Child Education" name="childEducation">
               <Input type="text" placeholder="your child Education" />
             </Form.Item>
-          </Col> 
-
+          </Col>
         </Row>
         <h4>Medical Details :</h4>
         <Row gutter={20}>
@@ -208,7 +221,7 @@ const ApplyAttendee = () => {
             >
               <Input type="text" placeholder="write NA if not any" />
             </Form.Item>
-          </Col> 
+          </Col>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
               label="Allergies"
@@ -218,7 +231,7 @@ const ApplyAttendee = () => {
             >
               <Input type="text" placeholder="write NA if not any" />
             </Form.Item>
-          </Col> 
+          </Col>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
               label="Blood Group"

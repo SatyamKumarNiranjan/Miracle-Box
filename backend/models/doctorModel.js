@@ -24,6 +24,10 @@ const doctorSchema = new mongoose.Schema(
     gender: {
       type: String,
       required: [true, "gender is required"],
+    }, 
+    income: {
+      type: String,
+      required: [true, "income is required"],
     },
     aadhar: {
       type: String,
@@ -72,7 +76,7 @@ const doctorSchema = new mongoose.Schema(
     }, 
     childEducation: {
       type: String,
-      required: [true, "Child Education is require"],
+      // required: [true, "Child Education is require"],
     }, 
     sessionsAttended:{
       type:Array, 
@@ -89,10 +93,6 @@ const doctorSchema = new mongoose.Schema(
     status: {
       type: String,
       default: "Level 0",
-    },
-    sessionId: {
-      type: String,
-      required: [true, "Session Id is require"],
     },
   },
   { timestamps: true }
