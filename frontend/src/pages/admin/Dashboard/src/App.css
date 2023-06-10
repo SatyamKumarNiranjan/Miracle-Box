@@ -1,0 +1,12 @@
+.App {
+  padding: 4rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+

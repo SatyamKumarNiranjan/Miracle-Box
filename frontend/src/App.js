@@ -15,12 +15,14 @@ import ApplyAttendee from "./pages/ApplyAttendee";
 import ApplyVolunteer from "./pages/applyVolunteer";
 import Volunteers from "./pages/admin/Volunteers";
 import Attendees from "./pages/doctor/attendees";
-import DashBoard from "./pages/admin/DashBoard";
+// import DashBoard from "./pages/admin/DashBoard";
 import Attendance from "./pages/doctor/attendance"; 
 import CreateSession from "./pages/admin/createSession";
 import AttendeeProfile from "./pages/doctor/attendeeProfile";
 import Sessions from "./pages/session/sessions";
-import SessionInfo from "./pages/session/sessionInfo";
+import SessionInfo from "./pages/session/sessionInfo"; 
+import DashBoard from "./pages/admin/Dashboard/src/DashBoard";
+// import Doughnut from "./pages/admin/Dashboard/src/Doughnut";
 
 function App() {
   const {loading} = useSelector(state => state.alerts)
