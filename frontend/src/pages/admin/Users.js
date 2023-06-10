@@ -4,8 +4,7 @@ import axios from 'axios'
 import { Table } from 'antd';
 const Users = () => { 
 
-  const [users , setUsers] = useState([]); 
-   
+  const [users , setUsers] = useState([]);  
   const getUsers = async () => {
     try {
       const res = await axios.get("/api/v1/admin/getAllUsers" , {
@@ -36,7 +35,7 @@ const Users = () => {
       dataIndex: "email",
     },
     {
-      title: "Doctor",
+      title: "Volunteer",
       dataIndex: "isDoctor",
       render: (text, record) => <span>{record.isDoctor ? "Yes" : "No"}</span>,
     },

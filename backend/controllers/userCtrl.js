@@ -1,7 +1,8 @@
 const userModel = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const doctorModel = require("../models/doctorModel");
+const doctorModel = require("../models/doctorModel"); 
+const sessionsModel = require("../models/sessionsModel");
 const appointmentModel = require("../models/appointModels");
 const volunteerModel = require("../models/volunteerModel");
 
@@ -99,7 +100,27 @@ const applyAttendeeController = async (req, res) => {
       message: "Error WHile Applying For Doctotr",
     });
   }
-};
+}; 
+
+// Get all the Sesions getAllSessionsController 
+
+const getAllSessionsController  = async (req , res) =>{
+  try {
+    const sessions = await sessionsModel.find({}) 
+    res.status(200).send({
+      success:true , 
+      message : "Sessions List Fetched successfully", 
+      data : sessions,
+    })
+  } catch (error) {
+    console.log(error); 
+    res.status(500).send({
+      success:false , 
+      error, 
+      message: 'Error while fetching Doctor'
+    })
+  }
+}
 
 // apply volunteer Ctrl  
 
@@ -226,4 +247,4 @@ const bookAppointmentController = async (req, res) => {
     });
   }
 };
-module.exports = { loginController, registerController, authController,applyAttendeeController,getAllNotificationController,deleteAllNotificationController , getAllDoctorsController ,bookAppointmentController , applyVolunteerController};
+module.exports = { loginController, getAllSessionsController ,registerController, authController,applyAttendeeController,getAllNotificationController,deleteAllNotificationController , getAllDoctorsController ,bookAppointmentController , applyVolunteerController};

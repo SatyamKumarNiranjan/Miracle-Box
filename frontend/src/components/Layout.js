@@ -34,10 +34,15 @@ const Layout = ({children}) => {
       name:'Attendees',  
       path: '/attendees',
       icon: "fa-solid fa-user"
+    },  
+    {
+      name:'Attendance',  
+      path: '/attendance',
+      icon: "fa-solid fa-user"
     }, 
     {
         name:'Sessions', 
-        path: '/appointments', 
+        path: '/sessions', 
         icon: "fa-solid fa-list"
     }, 
     {

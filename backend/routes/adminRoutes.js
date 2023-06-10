@@ -1,6 +1,6 @@
 const express = require('express') 
 const authMiddleware = require("../middlewares/authMiddleware");
-const { getAllUsersController, changeAccountStatusController, getAllVolunteerController } = require('../controllers/adminCtrl');
+const { getAllUsersController, changeAccountStatusController, getAllVolunteerController, createSessionController } = require('../controllers/adminCtrl');
 const router = express.Router()
 
 //Get Mehod || users 
@@ -11,5 +11,9 @@ router.get('/getAllDoctors' , authMiddleware , getAllVolunteerController);
 
 //Post account status 
 
-router.post('/changeAccountStatus' , authMiddleware , changeAccountStatusController)
+router.post('/changeAccountStatus' , authMiddleware , changeAccountStatusController) 
+
+// Create Session 
+router.post("/createSession",authMiddleware,createSessionController); 
+
 module.exports = router 

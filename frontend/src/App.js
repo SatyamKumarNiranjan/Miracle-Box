@@ -16,6 +16,11 @@ import ApplyVolunteer from "./pages/applyVolunteer";
 import Volunteers from "./pages/admin/Volunteers";
 import Attendees from "./pages/doctor/attendees";
 import DashBoard from "./pages/admin/DashBoard";
+import Attendance from "./pages/doctor/attendance"; 
+import CreateSession from "./pages/admin/createSession";
+import AttendeeProfile from "./pages/doctor/attendeeProfile";
+import Sessions from "./pages/session/sessions";
+import SessionInfo from "./pages/session/sessionInfo";
 
 function App() {
   const {loading} = useSelector(state => state.alerts)
@@ -40,6 +45,13 @@ function App() {
               <ApplyAttendee />
             </ProtectedRoutes>
           } 
+        />  
+        <Route path="/sessionInfo" 
+          element={
+            <ProtectedRoutes>
+              <SessionInfo />
+            </ProtectedRoutes>
+          } 
         /> 
         <Route path="/admin/volunteers" 
           element={
@@ -54,11 +66,39 @@ function App() {
               <DashBoard />
             </ProtectedRoutes>
           } 
+        />   
+        <Route path="/attendeeProfile" 
+          element={
+            <ProtectedRoutes>
+              <AttendeeProfile />
+            </ProtectedRoutes>
+          } 
+        /> 
+        <Route path="/sessions" 
+          element={
+            <ProtectedRoutes>
+              <Sessions />
+            </ProtectedRoutes>
+          } 
         />  
         <Route path="/attendees" 
           element={
             <ProtectedRoutes>
               <Attendees />
+            </ProtectedRoutes>
+          } 
+        />  
+        <Route path="/attendance/:sessionId" 
+          element={
+            <ProtectedRoutes>
+              <Attendance />
+            </ProtectedRoutes>
+          } 
+        />  
+         <Route path="/admin/sessions" 
+          element={
+            <ProtectedRoutes>
+              <CreateSession />
             </ProtectedRoutes>
           } 
         /> 

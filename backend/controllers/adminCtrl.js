@@ -1,4 +1,5 @@
 const userModel = require("../models/userModel");
+const sessionModel = require("../models/sessionsModel");
 const volunteerModel = require("../models/volunteerModel");
 const getAllUsersController = async(req,res) =>{
     try { 
@@ -17,7 +18,26 @@ const getAllUsersController = async(req,res) =>{
             error,
         })
     }
-}; 
+};  
+
+const createSessionController = async(req , res) =>{
+    console.log("pahuch gya");
+  try {
+    const newSession = await sessionModel({ ...req.body });
+    await newSession.save();
+    res.status(201).send({
+      success: true,
+      message: "Session Created SUccessfully",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      error,
+      message: "Error WHile creating a session",
+    });
+  }
+};
 
 const getAllVolunteerController = async(req,res) =>{
     try { 
@@ -70,4 +90,4 @@ const changeAccountStatusController = async(req,res) =>{
 
 }; 
 
-module.exports = { getAllUsersController , getAllVolunteerController , changeAccountStatusController}; 
+module.exports = { getAllUsersController , createSessionController , getAllVolunteerController , changeAccountStatusController}; 

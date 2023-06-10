@@ -1,13 +1,43 @@
 import React , {useEffect , useState} from 'react' 
 import Layout from '../../components/Layout' 
 import axios from 'axios'
-import { Row, Table } from 'antd';
+import { Table } from 'antd';  
 import { useNavigate } from 'react-router-dom';
-import DoctorList from '../../components/DoctorList';
-const Attendees = () => { 
 
-  const [users , setUsers] = useState([]); 
-  const navigate =  useNavigate(); 
+const Attendees = () => { 
+  const Navigate = useNavigate()
+  const [users , setUsers] = useState([]);   
+  const [filteredInfo, setFilteredInfo] = useState({});
+  const [sortedInfo, setSortedInfo] = useState({}); 
+ 
+  const handleProfile =()=>{
+    Navigate('/attendeeProfile')
+  }
+  const renderUsers = () => {
+    return users.map(user => (
+      <tr key={user._id}>
+        <td>{user.firstName}</td>
+        <td>{user.phone}</td> 
+        <td>{user.address}</td> 
+        <div className="d-flex">
+           <button className="btn btn-primary" onClick = {handleProfile}>Profile</button>
+         </div>
+      </tr>
+    ));
+  };
+  const clearFilters = () => {
+    setFilteredInfo({});
+  };
+  const clearAll = () => {
+    setFilteredInfo({});
+    setSortedInfo({});
+  };
+  const setAgeSort = () => {
+    setSortedInfo({
+      order: 'descend',
+      columnKey: 'age',
+    });
+  };
   const getUsers = async () => {
     try {
       const res = await axios.get("/api/v1/doctor/getAttendeesInfo" , {
@@ -15,7 +45,7 @@ const Attendees = () => {
           Authorization : `Bearer ${localStorage.getItem('token')}` ,
         },
       }); 
-      if(res.data.success){
+      if(res.data.success){ 
         setUsers(res.data.data); 
       }
     } catch (error) {
@@ -25,20 +55,25 @@ const Attendees = () => {
   useEffect(() => {
     getUsers();
   },[]); 
-
-  // antd table col  
   
-  // users = JSON.parse(users);
-  return (
-    <Layout>
-        <h1 className='text-center'>Home Page</h1> 
-        <Row>
-          {users && users.map(doctor =>(
-            <DoctorList doctor = {doctor}/>
-          ))}
-        </Row>
-    </Layout>
-  )
+  // users = users.data ; 
+    return (
+      <Layout>
+        <h1 className='m-2 text-center'>Attendee List</h1>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Mobile</th> 
+              <th>Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            {renderUsers()}
+          </tbody>
+        </table>
+      </Layout> 
+    )
 }
 
 export default Attendees ; 
