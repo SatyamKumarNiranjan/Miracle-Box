@@ -16,7 +16,7 @@ import ApplyVolunteer from "./pages/applyVolunteer";
 import Volunteers from "./pages/admin/Volunteers";
 import Attendees from "./pages/doctor/attendees";
 import DashBoard from "./pages/admin/DashBoard";
-
+import SessionForm from './pages/SessionForm.js'
 function App() {
   const {loading} = useSelector(state => state.alerts)
   return (
@@ -101,6 +101,20 @@ function App() {
            element={
             <ProtectedRoutes>
              <Profile />
+            </ProtectedRoutes>
+          }
+        /> 
+         <Route path="/sessions"
+           element={
+            <ProtectedRoutes>
+             <SessionForm />
+            </ProtectedRoutes>
+          }
+        /> 
+          <Route path="/admin/sessions"
+           element={
+            <ProtectedRoutes>
+             <SessionForm />
             </ProtectedRoutes>
           }
         /> 

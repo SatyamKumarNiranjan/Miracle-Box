@@ -50,7 +50,6 @@ const Users = () => {
       ),
     },
   ]; 
-  users = JSON.parse(users);
   return (
     <Layout> 
       <h1 className='m-2 text-center'>Users List</h1> 

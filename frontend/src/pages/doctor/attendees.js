@@ -2,6 +2,7 @@ import React , {useEffect , useState} from 'react'
 import Layout from '../../components/Layout' 
 import axios from 'axios'
 import { Row, Table } from 'antd';
+import './attendees.css'
 import { useNavigate } from 'react-router-dom';
 import DoctorList from '../../components/DoctorList';
 const Attendees = () => { 
@@ -31,8 +32,8 @@ const Attendees = () => {
   // users = JSON.parse(users);
   return (
     <Layout>
-        <h1 className='text-center'>Home Page</h1> 
-        <Row>
+        <h1 className='text-center'>Attendees</h1> 
+        <Row className='ats'>
           {users && users.map(doctor =>(
             <DoctorList doctor = {doctor}/>
           ))}

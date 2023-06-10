@@ -89,14 +89,17 @@ const applyAttendeeController = async (req, res) => {
     await newDoctor.save();
     res.status(201).send({
       success: true,
-      message: "Doctor Account Applied SUccessfully",
+      message: "attendee Account Applied SUccessfully",
     });
+
+
+    
   } catch (error) {
     console.log(error);
     res.status(500).send({
       success: false,
       error,
-      message: "Error WHile Applying For Doctotr",
+      message: "Error WHile Applying For attendee",
     });
   }
 };
@@ -122,14 +125,14 @@ const applyVolunteerController = async (req, res) => {
     await userModel.findByIdAndUpdate(adminUser._id, { notification });
     res.status(201).send({
       success: true,
-      message: "Volunteer Account Applied SUccessfully",
+      message: "Volunteer Account Applied Successfully",
     });
   } catch (error) {
     console.log(error);
     res.status(500).send({
       success: false,
       error,
-      message: "Error WHile Applying For Volunteer",
+      message: "Error While Applying For Volunteer",
     });
   }
 };

@@ -23,7 +23,7 @@ const updateProfileController = async(req , res) =>{
         const doctor = await doctorModel.findOneAndUpdate({ userId: req.body.userId } , req.body) 
         res.status(201).send({
             success:true ,
-            message: 'Doctor Profile Updated',  
+            message: 'Profile Updated Successfully',  
             data : doctor , 
         })
         
@@ -31,7 +31,7 @@ const updateProfileController = async(req , res) =>{
         console.log(error) 
         res.status(500).send({
             success:false,
-            message: 'Doctor Profile Update issue',   
+            message: ' Profile Updating issue',   
             error,
         }); 
     }
@@ -50,7 +50,7 @@ const getDoctorByIdController = async(req,res) =>{
         res.status(500).send({
             success:false, 
             error, 
-            message:'Error in single Doctor Info'
+            message:'Error in single Info'
         })
     }
 }
