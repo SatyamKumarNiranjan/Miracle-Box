@@ -4,25 +4,26 @@ import Layout from "../components/Layout";
 import { Row } from 'antd';
 import DoctorList from '../components/DoctorList';
 const Home = () => { 
-  const [doctors,setDoctors] = useState([]); 
-  const getUserData = async ()=>{
+  const [sessions , setSessions] = useState([]);  
+  const getSessions = async () => {
     try {
-      const res= await axios.get('/api/v1/user/getAllDoctors',{
+      const res = await axios.get("/api/v1/user/getAllSessions" , {
         headers:{
-          Authorization : "Bearer " + localStorage.getItem("token"),
-        }
-      })  
-      if(res.data.success){
-        setDoctors(res.data.data); 
-      }
+          Authorization : `Bearer ${localStorage.getItem('token')}` ,
+        },
+      }); 
+      if(res.data.success){ 
+        setSessions(res.data.data); 
+      } 
+      console.log(sessions)
     } catch (error) {
       console.log(error)
     }
-  }
-
-  useEffect(()=> {
-    getUserData()
-  },[])
+  } 
+  useEffect(() => { 
+    getSessions();
+  },[]); 
+  
   return (
     <Layout>
         <h1 className='text-center'>Home Page</h1> 
