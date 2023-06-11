@@ -10,6 +10,7 @@ const {
   applyVolunteerController,
   applyAttendeeController,
   getAllSessionsController,
+  SessionController,
 } = require("../controllers/userCtrl");
 const authMiddleware = require("../middlewares/authMiddleware");
 
@@ -46,5 +47,7 @@ router.get('/getAllDoctors' , authMiddleware , getAllDoctorsController)
 router.get('/getAllSessions' , authMiddleware , getAllSessionsController) 
 // Book Appointment 
 router.post('/book-appointment' , authMiddleware , bookAppointmentController); 
+
+
 
 module.exports = router;

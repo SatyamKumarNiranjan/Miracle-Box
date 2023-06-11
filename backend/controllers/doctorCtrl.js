@@ -112,6 +112,9 @@ const getDoctorByIdController = async (req, res) => {
     });
   }
 };
+
+
+
 module.exports = {
   getAttendeesInfoController,
   getSearchedAttendeeController,

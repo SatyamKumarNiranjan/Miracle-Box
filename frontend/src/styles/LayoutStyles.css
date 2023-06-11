@@ -6,6 +6,7 @@
     display: flex;
 }
 .sidebar{
+    display: block;
     min-height: 100%; 
     width: 300px;  
     border-radius: 5px;
@@ -14,6 +15,7 @@
     margin-right : 20px;  
     color: white;
 }
+
 
 .content{
     width: 100%; 
@@ -80,3 +82,30 @@
     color: blue; 
     margin: 0 10px; 
 }  
+.sidebar-hidden .sidebar {
+    display: none;
+  }
+  
+  .hamburger {
+    display: none;
+  position:absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+  
+  cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      display: none;
+    }
+  
+    .sidebar-hidden .sidebar {
+      display: block;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  }

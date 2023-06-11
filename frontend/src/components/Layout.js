@@ -1,10 +1,10 @@
-import React, { children } from 'react' 
+import React, {  useState,children } from 'react' 
 import {Link , useLocation , useNavigate} from 'react-router-dom'
 import '../styles/LayoutStyles.css' 
 import { adminMenu, userMenu } from '../Data/data'; 
 import {message,Badge} from 'antd'
 import { useSelector } from 'react-redux';  
-
+import MenuIcon from '@mui/icons-material/Menu';
 // Doctor Menu 
 
 
@@ -12,6 +12,7 @@ const Layout = ({children}) => {
     const {user} = useSelector((state) => state.user)
     const location = useLocation()  
     const navigate = useNavigate();  
+    const [sidebarVisible, setSidebarVisible] = useState(true);
     //logout function 
     const handleLogout = () =>{
       localStorage.clear() 
@@ -52,10 +53,15 @@ const Layout = ({children}) => {
     },
 
 ];  
-    const SidebarMenu = user?.isAdmin ? adminMenu : user?.isVolunteer ? volunteerMenu : userMenu; 
+    const SidebarMenu = user?.isAdmin ? adminMenu : user?.isVolunteer ? volunteerMenu : userMenu;
+    
+    const toggleSidebar = () => {
+      setSidebarVisible(!sidebarVisible);
+    };
+
   return ( 
     <>
-      <div className="main">
+       <div className={`main ${sidebarVisible ? '' : 'sidebar-hidden'}`}>
         <div className = "layout"> 
            <div className= "sidebar"> 
            <div className="logo">
@@ -98,6 +104,9 @@ const Layout = ({children}) => {
              </div>
         </div> 
 
+      </div>
+      <div className="hamburger" onClick={toggleSidebar}>
+        <MenuIcon />
       </div>
     </>
   )

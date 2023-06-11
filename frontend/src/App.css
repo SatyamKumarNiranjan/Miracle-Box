@@ -1,0 +1,21 @@
+.Ups {
+    padding: 4rem;
+  }
+.cards-container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(197, 228, 228);
+  }
+  .search-box {
+    outline: none;
+    width: 100%;
+    border: 1px solid grey;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: .5rem;
+  }
+  .Ups h1{
+    justify-content: center;
+    text-align: center;
+  }

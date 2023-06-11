@@ -247,4 +247,6 @@ const bookAppointmentController = async (req, res) => {
     });
   }
 };
+
+
 module.exports = { loginController, getAllSessionsController ,registerController, authController,applyAttendeeController,getAllNotificationController,deleteAllNotificationController , getAllDoctorsController ,bookAppointmentController , applyVolunteerController};

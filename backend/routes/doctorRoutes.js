@@ -23,4 +23,6 @@ router.post('/getDoctorById' ,  getDoctorByIdController);
 router.post('/markAttendance' ,  markAttendanceController); 
 // Post Session info 
 //Apply Doctor || POST
+
+
 module.exports = router;
