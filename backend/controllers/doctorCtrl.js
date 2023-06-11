@@ -97,12 +97,13 @@ const markAttendanceController = async (req, res) => {
 };
 const getDoctorByIdController = async (req, res) => {
   try {
-    const Attendee = await doctorModel.findOne({ _id: req.body.userId });
+    const Attendee = await doctorModel.findById({ _id: req.body.userId });
     res.status(200).send({
       success: true,
       message: "Single Attendee info Fetched",
-      data: Attendee,
-    });
+      data: Attendee, 
+    }); 
+    // console.log(Attendee)
   } catch (error) {
     console.log(error);
     res.status(500).send({

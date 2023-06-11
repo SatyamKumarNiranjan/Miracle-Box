@@ -9,7 +9,6 @@ const { updateProfileController, getDoctorByIdController, getAttendeesInfoContro
 router.get('/getAttendeesInfo' , authMiddleware , getAttendeesInfoController) ; 
 // Get all searched required User 
 router.post('/getSearchedAttendee'  , getSearchedAttendeeController) ;  
-// Send Otp 
 
 // Post update profile updateProfile
 

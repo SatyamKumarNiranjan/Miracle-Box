@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Layout from '../../components/Layout'
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -6,9 +6,25 @@ import { showLoading, hideLoading } from "../../redux/features/alertSlice";
 import axios from "axios"; 
 import { message } from 'antd';
 
-const CreateCommunity = () => {
+const CreateCommunity = () => { 
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
+    const [community , setCommunity] = useState([]);  
+    const getAllCommunity = async () => {
+      try {
+        const res = await axios.get("/api/v1/admin/getAllCommunity"); 
+        if(res.data.success){ 
+          setCommunity(res.data.data); 
+        }
+      } catch (error) {
+        console.log(error)
+      } 
+      console.log(community); 
+    } 
+    useEffect(() => {
+      getAllCommunity();
+    },[]); 
+    
     const handleSubmit = async (event) => {
       event.preventDefault(); // Prevent the form submission from reloading the page
       const form = event.target;

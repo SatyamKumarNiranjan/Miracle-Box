@@ -20,9 +20,29 @@ const getAllUsersController = async(req,res) =>{
         })
     }
 };  
+ 
+
+const getAllCommunityController = async(req,res) =>{
+  try { 
+      const community = await communityModel.find({}); 
+      res.status(200).send({
+          success:true , 
+          message: 'Community data fetched successfully' , 
+          data : community, 
+      }); 
+      // console.log(community)
+      
+  } catch (error) {   
+      console.log(error) 
+      res.status(500).send({
+          success:false , 
+          message:'error while fetching Community' , 
+          error,
+      })
+  }
+};  
 
 const createSessionController = async(req , res) =>{
-    console.log("pahuch gya");
   try {
     const newSession = await sessionModel({ ...req.body });
     await newSession.save();
@@ -110,4 +130,4 @@ const changeAccountStatusController = async(req,res) =>{
 
 }; 
 
-module.exports = { getAllUsersController , createCommunityController , createSessionController , getAllVolunteerController , changeAccountStatusController}; 
+module.exports = { getAllUsersController , getAllCommunityController , createCommunityController , createSessionController , getAllVolunteerController , changeAccountStatusController}; 

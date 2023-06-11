@@ -19,11 +19,6 @@ export const userMenu = [
         path: '/apply-attendee',
         icon: "fa-solid fa-user"
     }, 
-    {
-        name:"Profile", 
-        path:'/profile', 
-        icon:"fa-solid fa-user"
-    },
 
 ];
  
@@ -55,8 +50,8 @@ export const adminMenu = [
         icon:"fa-solid fa-user"
     }, 
     {
-        name:"Users", 
-        path:'/admin/users', 
+        name:"Attendees", 
+        path:'/attendees', 
         icon:"fa-solid fa-user"
     },
     

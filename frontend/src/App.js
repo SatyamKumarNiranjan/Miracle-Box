@@ -23,6 +23,7 @@ import Sessions from "./pages/session/sessions";
 import SessionInfo from "./pages/session/sessionInfo"; 
 import DashBoard from "./pages/admin/Dashboard/src/DashBoard";
 import CreateCommunity from "./pages/admin/createCommunity";
+import AttendeeSession from "./pages/admin/attendeeSession";
 // import Doughnut from "./pages/admin/Dashboard/src/Doughnut";
 
 function App() {
@@ -104,6 +105,13 @@ function App() {
               <Attendance />
             </ProtectedRoutes>
           } 
+        />   
+        <Route path="/admin/sessionAttended/:id" 
+          element={
+            <ProtectedRoutes>
+              <AttendeeSession />
+            </ProtectedRoutes>
+          } 
         />  
          <Route path="/admin/sessions" 
           element={
@@ -148,6 +156,13 @@ function App() {
           }
         /> 
         <Route path="/doctor/profile/:id"
+           element={
+            <ProtectedRoutes>
+             <Profile />
+            </ProtectedRoutes>
+          }
+        />  
+        <Route path="/doctor/updateProfile/:id"
            element={
             <ProtectedRoutes>
              <Profile />

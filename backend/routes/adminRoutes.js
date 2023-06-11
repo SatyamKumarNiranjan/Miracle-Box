@@ -1,6 +1,6 @@
 const express = require('express') 
 const authMiddleware = require("../middlewares/authMiddleware");
-const { getAllUsersController, changeAccountStatusController, getAllVolunteerController, createSessionController, createCommunityController } = require('../controllers/adminCtrl');
+const { getAllUsersController, changeAccountStatusController, getAllVolunteerController, createSessionController, createCommunityController, getAllCommunityController } = require('../controllers/adminCtrl');
 const router = express.Router()
 
 //Get Mehod || users 
@@ -15,6 +15,8 @@ router.post('/changeAccountStatus' , authMiddleware , changeAccountStatusControl
 
 // Create Session 
 router.post("/createSession",authMiddleware,createSessionController);  
+
+router.get('/getAllCommunity' , getAllCommunityController);  
 
 
 // Create Community

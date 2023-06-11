@@ -127,7 +127,7 @@ const ApplyAttendee = () => {
           </Col>
           <Col xs={24} md={24} lg={8}>
             <Form.Item label="Aadhar Number" name="aadhar">
-              <Input type="text" placeholder="your Aadhar Numbar" maxLength={12} />
+              <Input type="text" placeholder="your Aadhar Numbar" />
             </Form.Item>
           </Col>
           <Col xs={24} md={24} lg={8}>
