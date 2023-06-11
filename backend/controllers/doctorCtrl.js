@@ -52,14 +52,14 @@ const updateProfileController = async (req, res) => {
     );
     res.status(201).send({
       success: true,
-      message: "Doctor Profile Updated",
+      message: "Attendee Profile is Updated",
       data: Attendee,
     });
   } catch (error) {
     console.log(error);
     res.status(500).send({
       success: false,
-      message: "Doctor Profile Update issue",
+      message: "Attendee Profile Update issue",
       error,
     });
   }

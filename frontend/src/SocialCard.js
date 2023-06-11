@@ -20,7 +20,7 @@ const SocialCard = ({ session }) => {
           <strong>City: </strong> {session.city}
         </p>
         <p>
-          <strong>Date: </strong> {session.date}
+          <strong>Date: </strong> {new Date(session.date).toLocaleDateString()}
         </p>
       </div>
     </div>

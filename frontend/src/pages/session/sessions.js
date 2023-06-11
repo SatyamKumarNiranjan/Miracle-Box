@@ -3,8 +3,10 @@ import React , {useEffect , useState} from 'react'
 import { Table } from 'antd';  
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+import { useSelector } from "react-redux";
 
-const Sessions = () => { 
+const Sessions = () => {  
+  const { user } = useSelector((state) => state.user);
   const Navigate = useNavigate()
   const [sessions , setSessions] = useState([]);  
   
@@ -25,10 +27,14 @@ const Sessions = () => {
         <td>{new Date(session.date).toLocaleDateString()}</td>
         <td>{new Date(session.date).toLocaleTimeString()}</td>
         <td>{session.city}</td>  
-        <div className="d-flex">
+        <div className="d-flex"> 
+        {user.isAdmin && 
            <button className="m-1 btn btn-primary" onClick = {handleProfile}>View</button> 
-           <button className="m-1 btn btn-primary" onClick = {()=> Navigate(`/attendance/${session._id}`)}>Attendance</button>
-        </div> 
+        } 
+        {user.isVolunteer && 
+           <button className="m-1 btn btn-primary" onClick = {()=> Navigate(`/attendance/${session._id}`)}>Update Attendance</button>  
+        }
+        </div>  
       </tr>
     ));
   }; 

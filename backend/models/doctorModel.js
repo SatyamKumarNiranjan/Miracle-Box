@@ -11,7 +11,7 @@ const doctorSchema = new mongoose.Schema(
     },
     lastName: {
       type: String,
-      required: [true, "last name is required"],
+      default: "",
     },
     phone: {
       type: String,
@@ -19,7 +19,7 @@ const doctorSchema = new mongoose.Schema(
     },
     email: {
       type: String,
-      required: [true, "email is required"],
+      // required: [true, "email is required"],
     }, 
     gender: {
       type: String,
@@ -42,11 +42,11 @@ const doctorSchema = new mongoose.Schema(
     },  
     fatherName: {
       type: String,
-      required: [true, "Father Name is required"],
+      default: "",
     }, 
     motherName: {
       type: String,
-      required: [true, "Mother Name is required"],
+      default: "",
     },  
     maritalStatus: {
       type: String,
@@ -54,15 +54,15 @@ const doctorSchema = new mongoose.Schema(
     },  
     pastMajorInjury: {
       type: String,
-      required: [true, "Past Major Injury is required"],
+      default: "",
     },   
     existingIllness: {
       type: String,
-      required: [true, "Existing Illness is required"],
+      default: "",
     },   
     allergies: {
       type: String,
-      required: [true, "Allergies is required"],
+      default: "",
     },  
     bloodGroup: {
       type: String,
@@ -76,7 +76,7 @@ const doctorSchema = new mongoose.Schema(
     },
     qualification: {
       type: String,
-      required: [true, "Qualification is require"],
+      // required: [true, "Qualification is require"],
     }, 
     childEducation: {
       type: String,

@@ -62,7 +62,7 @@ const Attendance = () => {
         <td>{user.phone}</td> 
         <td>{user.address}</td> 
         <div className="d-flex">
-           <button className="btn btn-primary" onClick = {() => handleMarkAttendance(user._id)}>Mark</button>
+           <button className="btn btn-primary" onClick = {() => handleMarkAttendance(user._id)}>Update</button>
          </div>
       </tr>
     ));

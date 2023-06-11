@@ -28,9 +28,9 @@ const [sidebarVisible, setSidebarVisible] = useState(true);
         icon: "fa-solid fa-house"
     },  
     {
-      name:'Form',  
+      name:'Add Attendee',  
       path: '/apply-attendee',
-      icon: "fa-solid fa-user"
+      icon: "fa-solid fa-plus",
     }, 
     {
       name:'Attendees',  

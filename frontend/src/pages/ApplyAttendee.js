@@ -45,7 +45,7 @@ const ApplyAttendee = () => {
   };
   return (
     <Layout>
-      <h1 className="text-center">Attendee Form</h1>
+      <h1 className="text-center">Add an Attendee</h1>
       <Form layout="vertical" onFinish={handleFinish} className="m-3">
         <h4 className="">Personal Details : </h4>
         <Row gutter={20}>
@@ -81,16 +81,6 @@ const ApplyAttendee = () => {
           </Col>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
-              label="Email"
-              name="email"
-              required
-              rules={[{ required: true }]}
-            >
-              <Input type="email" placeholder="your email address" />
-            </Form.Item>
-          </Col>
-          <Col xs={24} md={24} lg={8}>
-            <Form.Item
               name="gender"
               label="Gender"
               rules={[{ required: true }]}
@@ -103,31 +93,6 @@ const ApplyAttendee = () => {
                 <Option value="female">female</Option>
                 <Option value="other">other</Option>
               </Select>
-            </Form.Item>
-          </Col>
-          <Col xs={24} md={24} lg={8}>
-            <Form.Item
-              label="Father Name"
-              name="fatherName"
-              required
-              rules={[{ required: true }]}
-            >
-              <Input type="text" placeholder="your father name" />
-            </Form.Item>
-          </Col>
-          <Col xs={24} md={24} lg={8}>
-            <Form.Item
-              label="Mother Name"
-              name="motherName"
-              required
-              rules={[{ required: true }]}
-            >
-              <Input type="text" placeholder="your Mother name" />
-            </Form.Item>
-          </Col>
-          <Col xs={24} md={24} lg={8}>
-            <Form.Item label="Aadhar Number" name="aadhar">
-              <Input type="text" placeholder="your Aadhar Numbar" />
             </Form.Item>
           </Col>
           <Col xs={24} md={24} lg={8}>
@@ -196,6 +161,31 @@ const ApplyAttendee = () => {
             <Form.Item label="Number of Children" name="children">
               <Input type="text" placeholder="your number of children" />
             </Form.Item>
+          </Col> 
+          <Col xs={24} md={24} lg={8}>
+            <Form.Item
+              label="Father Name"
+              name="fatherName"
+              // required
+              // rules={[{ required: true }]}
+            >
+              <Input type="text" placeholder="your father name" />
+            </Form.Item>
+          </Col>
+          <Col xs={24} md={24} lg={8}>
+            <Form.Item
+              label="Mother Name"
+              name="motherName"
+              // required
+              // rules={[{ required: true }]}
+            >
+              <Input type="text" placeholder="your Mother name" />
+            </Form.Item>
+          </Col>
+          <Col xs={24} md={24} lg={8}>
+            <Form.Item label="Aadhar Number" name="aadhar">
+              <Input type="text" placeholder="your Aadhar Numbar" />
+            </Form.Item>
           </Col>
         </Row>
         <h4>Educational Details :</h4>
@@ -204,8 +194,8 @@ const ApplyAttendee = () => {
             <Form.Item
               label="Qualification"
               name="qualification"
-              required
-              rules={[{ required: true }]}
+              // required
+              // rules={[{ required: true }]}
             >
               <Input type="text" placeholder="your qualification" />
             </Form.Item>
@@ -222,8 +212,8 @@ const ApplyAttendee = () => {
             <Form.Item
               label="Past Major Injury"
               name="pastMajorInjury"
-              required
-              rules={[{ required: true }]}
+              // required
+              // rules={[{ required: true }]}
             >
               <Input type="text" placeholder="write NA if not any" />
             </Form.Item>
@@ -232,8 +222,8 @@ const ApplyAttendee = () => {
             <Form.Item
               label="Existing Illness"
               name="existingIllness"
-              required
-              rules={[{ required: true }]}
+              // required
+              // rules={[{ required: true }]}
             >
               <Input type="text" placeholder="write NA if not any" />
             </Form.Item>
@@ -242,8 +232,8 @@ const ApplyAttendee = () => {
             <Form.Item
               label="Allergies"
               name="allergies"
-              required
-              rules={[{ required: true }]}
+              // required
+              // rules={[{ required: true }]}
             >
               <Input type="text" placeholder="write NA if not any" />
             </Form.Item>
@@ -252,8 +242,8 @@ const ApplyAttendee = () => {
             <Form.Item
               label="Blood Group"
               name="bloodgroup"
-              required
-              rules={[{ required: true }]}
+              // required
+              // rules={[{ required: true }]}
             >
               <Input type="text" placeholder="write NA if u havent checked" />
             </Form.Item>
