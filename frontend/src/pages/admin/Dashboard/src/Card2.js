@@ -8,8 +8,8 @@ const Card = (props) => {
             <div className="card__title">{props.title}</div>
             <div className="card__body">
                <h3 id='totalUser'>{props.length}</h3>
-               <p >Benefitted: {props.benefit}</p>
-               <p >Not Benefitted: {props.NotBenefit}</p>
+               <p >Benefitted : {props.benefit}</p>
+               <p >Not Benefitted : {props.NotBenefit}</p>
             </div>
 
         </div>

@@ -1,11 +1,12 @@
 .card {
-    margin: 2rem 2rem 2rem 0;
+    margin: 2rem 2rem 2rem .75rem;
     padding: 1.5rem;
-    width: 230px;
-    box-shadow: 0 0 28px 4px rgba(0,0,0,0.1);
+    width: 200px;
+    box-shadow: 0 0 28px 4px rgba(0,0,0,0.2);
     transition: transform .3s ease;
     cursor: pointer;
     border-radius: 1rem 1rem 1rem 1rem;
+    background-color: lightblue;
 }
 
 .card:hover {
@@ -19,14 +20,6 @@
     padding-bottom:1rem;
     text-align: center;
 }
-
-/* .card__image {
-    display: flex;
-    justify-content: flex-end;
-}
-.card__image img {
-    border-radius: 50%;
-} */
 
 .card_body{
     font-weight: 10;

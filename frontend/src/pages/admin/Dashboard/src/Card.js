@@ -8,8 +8,8 @@ const Card = (props) => {
             <div className="card__title">{props.title}</div>
             <div className="card__body">
                <h3 id='totalUser'>{props.length}</h3>
-               <p >Males: {props.male}</p>
-               <p >Females: {props.female}</p>
+               <p >Males : {props.male}</p>
+               <p >Females : {props.female}</p>
             </div>
 
         </div>
