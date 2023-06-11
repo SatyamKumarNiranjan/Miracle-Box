@@ -1,6 +1,7 @@
 const userModel = require("../models/userModel");
 const sessionModel = require("../models/sessionsModel");
 const volunteerModel = require("../models/volunteerModel");
+const communityModel = require("../models/communityModel");
 const getAllUsersController = async(req,res) =>{
     try { 
         const users = await userModel.find({}); 
@@ -35,6 +36,25 @@ const createSessionController = async(req , res) =>{
       success: false,
       error,
       message: "Error WHile creating a session",
+    });
+  }
+}; 
+
+const createCommunityController = async(req , res) =>{
+    console.log("pahuch gya");
+  try {
+    const newCommunity = await communityModel({ ...req.body });
+    await newCommunity.save();
+    res.status(201).send({
+      success: true,
+      message: "Community Created SUccessfully",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      error,
+      message: "Error While creating a Community",
     });
   }
 };
@@ -90,4 +110,4 @@ const changeAccountStatusController = async(req,res) =>{
 
 }; 
 
-module.exports = { getAllUsersController , createSessionController , getAllVolunteerController , changeAccountStatusController}; 
+module.exports = { getAllUsersController , createCommunityController , createSessionController , getAllVolunteerController , changeAccountStatusController}; 

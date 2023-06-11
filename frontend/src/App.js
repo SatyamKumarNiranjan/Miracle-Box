@@ -22,6 +22,7 @@ import AttendeeProfile from "./pages/doctor/attendeeProfile";
 import Sessions from "./pages/session/sessions";
 import SessionInfo from "./pages/session/sessionInfo"; 
 import DashBoard from "./pages/admin/Dashboard/src/DashBoard";
+import CreateCommunity from "./pages/admin/createCommunity";
 // import Doughnut from "./pages/admin/Dashboard/src/Doughnut";
 
 function App() {
@@ -61,6 +62,13 @@ function App() {
               <Volunteers />
             </ProtectedRoutes>
           } 
+        />    
+        <Route path="/admin/community" 
+          element={
+            <ProtectedRoutes>
+              <CreateCommunity />
+            </ProtectedRoutes>
+          } 
         />   
          <Route path="/admin/dashboard" 
           element={
@@ -69,7 +77,7 @@ function App() {
             </ProtectedRoutes>
           } 
         />   
-        <Route path="/attendeeProfile" 
+        <Route path="/attendeeProfile/:id" 
           element={
             <ProtectedRoutes>
               <AttendeeProfile />

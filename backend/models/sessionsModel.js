@@ -29,19 +29,13 @@ const sessionSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  attendees: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    level: {
-      type: Number,
-    },
-  }],
-  
-  
+  attendees: {
+    type: Array,
+    default : []
+  },
   community: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Community',
-    // required: true
+    type: Array,
+    default : []
   }
 });
 

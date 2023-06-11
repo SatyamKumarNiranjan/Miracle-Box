@@ -7,12 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Attendees = () => { 
   const Navigate = useNavigate()
   const [users , setUsers] = useState([]);   
-  const [filteredInfo, setFilteredInfo] = useState({});
-  const [sortedInfo, setSortedInfo] = useState({}); 
  
-  const handleProfile =()=>{
-    Navigate('/attendeeProfile')
-  }
   const renderUsers = () => {
     return users.map(user => (
       <tr key={user._id}>
@@ -20,23 +15,10 @@ const Attendees = () => {
         <td>{user.phone}</td> 
         <td>{user.address}</td> 
         <div className="d-flex">
-           <button className="btn btn-primary" onClick = {handleProfile}>Profile</button>
+           <button className="btn btn-primary" onClick = {()=> Navigate(`/attendeeProfile/${user._id}`)}>Profile</button>
          </div>
       </tr>
     ));
-  };
-  const clearFilters = () => {
-    setFilteredInfo({});
-  };
-  const clearAll = () => {
-    setFilteredInfo({});
-    setSortedInfo({});
-  };
-  const setAgeSort = () => {
-    setSortedInfo({
-      order: 'descend',
-      columnKey: 'age',
-    });
   };
   const getUsers = async () => {
     try {

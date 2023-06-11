@@ -76,7 +76,7 @@ const ApplyAttendee = () => {
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your contact no" />
+              <Input type="text" placeholder="your contact no" maxLength={10} />
             </Form.Item>
           </Col>
           <Col xs={24} md={24} lg={8}>
@@ -127,7 +127,7 @@ const ApplyAttendee = () => {
           </Col>
           <Col xs={24} md={24} lg={8}>
             <Form.Item label="Aadhar Number" name="aadhar">
-              <Input type="text" placeholder="your Aadhar Numbar" />
+              <Input type="text" placeholder="your Aadhar Numbar" maxLength={12} />
             </Form.Item>
           </Col>
           <Col xs={24} md={24} lg={8}>
@@ -138,6 +138,16 @@ const ApplyAttendee = () => {
               rules={[{ required: true }]}
             >
               <Input type="text" placeholder="your Age" />
+            </Form.Item>
+          </Col> 
+          <Col xs={24} md={24} lg={8}>
+            <Form.Item
+              label="Community"
+              name="community"
+              required
+              rules={[{ required: true }]}
+            >
+              <Input type="text" placeholder="Your Community" />
             </Form.Item>
           </Col>
           <Col xs={24} md={24} lg={8}>
@@ -157,7 +167,13 @@ const ApplyAttendee = () => {
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your marital status" />
+             <Select
+                placeholder="Select a option"
+                allowClear
+              >
+                <Option value="Married">Married</Option>
+                <Option value="Unmarried">Unmarried</Option>
+              </Select>
             </Form.Item>
           </Col>
           <Col xs={24} md={24} lg={8}>

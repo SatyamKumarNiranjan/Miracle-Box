@@ -47,17 +47,18 @@ export const adminMenu = [
     {
         name:'Sessions', 
         path: '/admin/sessions', 
-        icon: "fa-solid fa-s"
+        icon: "fa-solid fa-s" 
+    }, 
+    {
+        name:"Community", 
+        path:'/admin/community', 
+        icon:"fa-solid fa-user"
     }, 
     {
         name:"Users", 
         path:'/admin/users', 
         icon:"fa-solid fa-user"
     },
-    {
-        name:"Profile", 
-        path:'/profile', 
-        icon:"fa-solid fa-user"
-    }
+    
 
 ];

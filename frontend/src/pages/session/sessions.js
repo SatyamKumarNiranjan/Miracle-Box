@@ -27,7 +27,7 @@ const Sessions = () => {
         <td>{session.city}</td>  
         <div className="d-flex">
            <button className="m-1 btn btn-primary" onClick = {handleProfile}>View</button> 
-           <button className="m-1 btn btn-primary" onClick = {()=> Navigate(`/attendance/${session._id}`)}>View</button>
+           <button className="m-1 btn btn-primary" onClick = {()=> Navigate(`/attendance/${session._id}`)}>Attendance</button>
         </div> 
       </tr>
     ));

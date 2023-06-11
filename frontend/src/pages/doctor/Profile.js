@@ -185,36 +185,6 @@ const Profile = () => {
               <Input type="text" placeholder="your number of children" />
             </Form.Item>
           </Col>  
-          <Col xs={24} md={24} lg={8}>
-            <Form.Item
-              label="Session Id"
-              name="sessionId"
-              required
-              rules={[{ required: true }]}
-            >
-              <Input type="text" placeholder="your session Id" />
-            </Form.Item>
-          </Col>  
-          <Col xs={24} md={24} lg={8}>
-            <Form.Item
-              label="Attendance"
-              name="sessionAttendance"
-              required
-              rules={[{ required: true }]}
-            >
-              <Input type="text" placeholder="Mark Your Attendance" />
-            </Form.Item>
-          </Col>  
-          <Col xs={24} md={24} lg={8}>
-            <Form.Item
-              label="Is Benefitted"
-              name="isBenefitted"
-              required
-              rules={[{ required: true }]}
-            >
-              <Input type="text" placeholder="FeedBack" />
-            </Form.Item>
-          </Col> 
         </Row> 
         <h4>Educational Details :</h4>
         <Row gutter={20}>

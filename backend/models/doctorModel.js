@@ -28,6 +28,10 @@ const doctorSchema = new mongoose.Schema(
     income: {
       type: String,
       required: [true, "income is required"],
+    }, 
+    community: {
+      type: String,
+      required: [true, "community is required"],
     },
     aadhar: {
       type: String,
@@ -81,14 +85,6 @@ const doctorSchema = new mongoose.Schema(
     sessionsAttended:{
       type:Array, 
       default: [],
-    },
-    sessionAttendance: {
-      type: Boolean,
-      default: false,
-    },
-    isBenefitted: {
-      type: Boolean,
-      default: false,
     },
     status: {
       type: String,

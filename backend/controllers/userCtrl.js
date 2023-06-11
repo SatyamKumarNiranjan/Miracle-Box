@@ -90,14 +90,14 @@ const applyAttendeeController = async (req, res) => {
     await newDoctor.save();
     res.status(201).send({
       success: true,
-      message: "Doctor Account Applied SUccessfully",
+      message: "Attendee Account Applied SUccessfully",
     });
   } catch (error) {
     console.log(error);
     res.status(500).send({
       success: false,
       error,
-      message: "Error WHile Applying For Doctotr",
+      message: "Error WHile Applying For Attendee",
     });
   }
 }; 
