@@ -40,8 +40,14 @@ function App() {
         console.log("res",res);
         res.data.map(item => {
             console.log("item", item)
+          //   const getAllProducts= async(req,res)=>{
+          //     const myData= await item.find({});
+          //     console.log("the data is\t",myData);
+          // }
+          
+          //getAllProducts();
               label.push(item.firstName);
-              data.push(item.children)
+              data.push(item.age)
           })
 
         setData(
@@ -65,11 +71,21 @@ function App() {
     }
   fetchData();
   }, [])
+  // return (
+  //   <div className="App" style={{width:'50%', height:'50%'}}>
+     
+  //     <Doughnut data={data}/>
+  //   </div>
+  // );
+
   return (
-    <div className="App" style={{width:'50%', height:'50%'}}>
-      <Doughnut data={data}/>
+    <div className="MApp">
+      <div className="ChartContainer">
+        <Doughnut data={data} />
+      </div>
     </div>
   );
+  
 }
 
 export default App;
