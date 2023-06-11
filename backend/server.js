@@ -1,4 +1,4 @@
- const express = require('express');
+const express = require('express');
  const moragan = require('morgan');
  const dotenv = require('dotenv');
  const connectDB = require('./config/db');

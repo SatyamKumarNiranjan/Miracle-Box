@@ -1,0 +1,39 @@
+.slideshow-wrapper{
+    background-color: rgb(255, 255, 255); /* Replace with your desired light background color */
+    padding: 20px;
+     
+}
+.slideshow-text {
+  background-color:  rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .slideshow-text h2 {
+    color: #333;
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 10px;
+  }
+  
+  .slideshow-text p {
+    color: #666;
+    font-size: 16px;
+  }
+  
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .slideshow-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
