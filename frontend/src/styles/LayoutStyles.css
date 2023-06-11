@@ -1,3 +1,6 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .main{
     padding: 10px; 
     height : 100vh; 
@@ -6,13 +9,15 @@
     display: flex;
 }
 .sidebar{
-    min-height: 100%; 
-    width: 300px;  
-    border-radius: 5px;
-    background-color: rgb(64, 4, 4); 
+    min-height: 100%;
+    position: fixed;
+    width: 250px;  
+    background-color: #8c7ae6;
     box-shadow : 0 0 3px gray ; 
     margin-right : 20px;  
     color: white;
+    margin-left: -10px;
+    margin-top: -10px;
 }
 
 .content{
@@ -23,15 +28,22 @@
 .header{
     height : 10vh; 
     margin-bottom: 20px; 
-    box-shadow: 0 0 2px gray; 
-    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 2px gray;
+    border-bottom-left-radius: 50px;
+    background: rgb(239, 205, 255);
+    background: linear-gradient(90deg, rgba(239, 205, 255, 1) 14%, rgba(149, 148, 233, 1) 80%);
+    margin-top:-10px;
+    margin-right:-50px;
+    
 } 
 .body{
     height : 85vh; 
     margin-bottom: 20px; 
-    box-shadow: 0 0 2px gray; 
     background-color: rgb(255, 255, 255);
 } 
+.body h2{
+    font-size: larger;
+}
 .logo h6{ 
     text-align: center;
     font-size: 1.5rem; 
@@ -70,14 +82,17 @@
 } 
 
 .header-content i {
+    margin-top: 8px;
     margin-right: 20px;
-    font-size: 1.2rem; 
+    font-size: 1.5rem; 
 } 
 .header-content a {
     /* text-decoration: none;   */
+    font-size: 25px;
     text-decoration: solid;
     text-transform: uppercase; 
-    color: blue; 
+    color: white; 
+    
     margin: 0 10px; 
 }  
 

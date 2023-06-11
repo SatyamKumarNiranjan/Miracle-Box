@@ -1,9 +1,9 @@
 import React from 'react';
-import {Form , message} from 'antd';
-import "../styles/RegisterStyle.css";
+import { Form, message } from 'antd';
+import "./src/styles/RegisterStyle.css";
 import { useDispatch } from 'react-redux';
-import { showLoading,hideLoading } from '../redux/features/alertSlice';
-import {Link , useNavigate} from "react-router-dom"; 
+import { showLoading, hideLoading } from '../redux/features/alertSlice';
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 
@@ -17,7 +17,7 @@ const Login = () => {
   const onFinishHandler = async (values) => {
     try {
       dispatch(showLoading());
-      const res = await axios.post("/api/v1/user/login", values);  
+      const res = await axios.post("/api/v1/user/login", values);
       //by below function brwser reload we are using this bcz the data requires to be reloaded to be updated
       window.location.reload();
       dispatch(hideLoading());
@@ -36,25 +36,25 @@ const Login = () => {
   }
   return (
     <>
-      <div className="form-container">
-      <Form layout="vertical" onFinish={onFinishHandler}
-       className="register-form">
+        <div className="form-container">
+          <Form layout="vertical" onFinish={onFinishHandler}
+            className="register-form">
 
-      <h3 className='text-centre '>Login Form</h3>
+            <h3 className='text-centre '>Login Form</h3>
 
-        <Form.Item label="Email" name="email">
-          <input type='email' required className='input-form'/>
-        </Form.Item>
+            <Form.Item label="Email" name="email">
+              <input type='email' required className='input-form' />
+            </Form.Item>
 
-        <Form.Item label="Password" name="password">
-          <input type='password' required className='input-form'/>
-        </Form.Item>
+            <Form.Item label="Password" name="password" >
+              <input type='password' required className='input-form' />
+            </Form.Item>
 
-         <Link to="/register" className="m-2">
-         Not a user? Register here.
-         </Link>
-        <button className="btn btn-primary" type='submit'>Login</button>
-      </Form>
+            <Link to="/register" className="m-2">
+              Not a user? Register here.
+            </Link>
+            <button className="btn btn-primary" type='submit'>Login</button>
+          </Form>
       </div>
     </>
   )
