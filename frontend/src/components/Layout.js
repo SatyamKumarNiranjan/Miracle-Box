@@ -55,7 +55,7 @@ const [sidebarVisible, setSidebarVisible] = useState(true);
     <>
        <div className={`main ${sidebarVisible ? '' : 'sidebar-hidden'}`}>
         <div className = "layout"> 
-           <div className= "sidebar"> 
+           <div className= "sidebar h-100000"> 
            <div className="logo">
                 <h6>Miracle-Box</h6> 
                 <hr/>  
@@ -89,7 +89,7 @@ const [sidebarVisible, setSidebarVisible] = useState(true);
                 >
                 <i class="fa-solid fa-bell"></i> 
                 </Badge>
-                    <Link to = "/profile">{user?.name}</Link>
+                    <div>{user?.name}</div>
                 </div>  
              </div>
              <div className="body">{children}</div>  

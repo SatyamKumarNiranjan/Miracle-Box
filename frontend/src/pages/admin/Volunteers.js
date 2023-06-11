@@ -67,11 +67,9 @@ const Volunteers = () => {
       dataIndex: "actions",
       render: (text, record) => (
         <div className="d-flex">
-          {record.status === "pending" ? (
+          {record.status === "pending" &&
             <button className="btn btn-success" onClick = {() =>handleAccountStatus(record , "approved")}>Approve</button>
-          ) : (
-            <button className="btn btn-danger" onClick = {() =>handleAccountStatus(record , "pending")}>Reject</button>
-          )}
+          }
         </div>
       ), 
     },

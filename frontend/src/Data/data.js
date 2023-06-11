@@ -10,10 +10,10 @@ export const userMenu = [
         icon: "fa-solid fa-user-tie"
     }, 
     {
-        name:'Attendee',  
-        path: '/apply-attendee',
-        icon: "fa-solid fa-user"
-    }, 
+        name:'Sessions', 
+        path: '/sessions', 
+        icon: "fa-solid fa-list"
+    },
 
 ];
  
@@ -33,12 +33,17 @@ export const adminMenu = [
         name:'Volunteers', 
         path: '/admin/volunteers', 
         icon: "fa-solid fa-user-doctor"
-    }, 
+    },  
     {
         name:'Sessions', 
-        path: '/admin/sessions', 
-        icon: "fa-solid fa-s" 
-    }, 
+        path: '/sessions', 
+        icon: "fa-solid fa-list"
+    },
+    // {
+    //     name:'Sessions', 
+    //     path: '/admin/sessions', 
+    //     icon: "fa-solid fa-s" 
+    // }, 
     {
         name:"Community", 
         path:'/admin/community', 

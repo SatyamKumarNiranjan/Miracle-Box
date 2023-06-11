@@ -62,7 +62,15 @@ const Attendance = () => {
         <td>{user.phone}</td> 
         <td>{user.address}</td> 
         <div className="d-flex">
-           <button className="btn btn-primary" onClick = {() => handleMarkAttendance(user._id)}>Update</button>
+        <button
+              className="btn btn-primary"
+              onClick={() => handleMarkAttendance(user._id)}
+              disabled={user.sessionsAttended.some((session) => session.sessionId === sessionId)}
+            >
+              {user.sessionsAttended.some((session) => session.sessionId === sessionId)
+                ? 'Updated'
+                : 'Update'}
+            </button>
          </div>
       </tr>
     ));
