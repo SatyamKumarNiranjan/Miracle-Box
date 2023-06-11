@@ -41,7 +41,7 @@ const  Line =()=> {
       series={[{
         name: 'age',
         data: data
-      }]} type="area" width='40%' height='20%' />
+      }]} type="area" width='80%' height='25%' />
     )
 }
 
