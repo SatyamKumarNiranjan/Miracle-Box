@@ -50,6 +50,7 @@ const Attendance = () => {
           ) 
           if (res.data.success){
             message.success(res.data.message) ;  
+            window.location.reload(); 
           }
       } catch (error) {
         message.error('Something Went Wrong')

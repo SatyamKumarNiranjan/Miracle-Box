@@ -28,9 +28,9 @@ const Sessions = () => {
         <td>{new Date(session.date).toLocaleTimeString()}</td>
         <td>{session.city}</td>  
         <div className="d-flex"> 
-        {user.isAdmin && 
+        {/* {user.isAdmin && 
            <button className="m-1 btn btn-primary" onClick = {handleProfile}>View</button> 
-        } 
+        }  */}
         {user.isVolunteer && 
            <button className="m-1 btn btn-primary" onClick = {()=> Navigate(`/attendance/${session._id}`)}>Update Attendance</button>  
         }

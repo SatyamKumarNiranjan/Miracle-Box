@@ -102,7 +102,7 @@ const Community = () => {
             />
           </div>
           <div className="col-md-3">
-            <label htmlFor="validationDefault04" className="form-label">
+            <label >
               State
             </label>
             <select className="form-select" id="validationDefault04" required>
@@ -118,7 +118,7 @@ const Community = () => {
             </select>
           </div>
   
-          <div className="col-12">
+          <div className="col-10">
             <button className="btn btn-primary" type="submit">
               Submit form
             </button>

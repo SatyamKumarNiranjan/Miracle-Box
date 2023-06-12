@@ -38,17 +38,22 @@ const CommunityPage = () => {
       title: 'State',
       dataIndex: 'state',
       key: 'state',
+    }, 
+    {
+      title: 'Session Conducted', 
+      dataIndex: 'sessions',
+      render: (sessions, record) => sessions.length,
     },
   ];
 
   return (
     <Layout>
-    <div style={{ position: 'relative', minHeight: '100vh' }}>
-      <Link to="/createcommunity"  style={{ position: 'absolute', bottom: 20, right: 50 }}>
-        <Button type="primary">Create Community</Button>
-      </Link>
-      <Table dataSource={communityData} columns={columns} />
-    </div>
+      <div style={{ position: 'relative', minHeight: '100vh' }}>
+        <Link to="/createcommunity"  style={{ position: 'absolute', bottom: 20, right: 50 }}>
+          <Button type="primary">Create Community</Button>
+        </Link>
+        <Table dataSource={communityData} columns={columns} />
+      </div>
     </Layout>
   );
 };
