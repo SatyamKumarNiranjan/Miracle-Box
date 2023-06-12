@@ -6,7 +6,7 @@ import { showLoading, hideLoading } from "../../redux/features/alertSlice";
 import axios from "axios"; 
 import { message } from 'antd';
 
-const Community = () => { 
+const CreateCommunity = () => { 
     const dispatch = useDispatch();
     const navigate = useNavigate(); 
     const [community , setCommunity] = useState([]);  
@@ -65,49 +65,51 @@ const Community = () => {
   
     return (
       <Layout>
-        <form className="row g-3" onSubmit={handleSubmit}>
-          <div className="col-md-4">
+      <div className='demo'>
+
+        <form  onSubmit={handleSubmit}>
+          <div >
             <label htmlFor="name" className="form-label">
               Community name
             </label>
             <input
               type="text"
-              className="form-control"
+             className='in1'
               id="name"
               placeholder="Enter community name"
               required
             />
           </div>
-          <div className="col-md-3">
+          <div >
             <label htmlFor="description" className="form-label">
               Description
             </label>
             <input
               type="text"
-              className="form-control"
+              className='in2'
               id="description"
               placeholder="Add Description"
             />
           </div>
-          <div className="col-md-6">
+          <div >
             <label htmlFor="district" className="form-label">
               District
             </label>
             <input
               type="text"
-              className="form-control"
+              className='in3'
               id="district"
               required
               placeholder="Enter District"
             />
           </div>
-          <div className="col-md-3">
-            <label >
+          <div >
+            <label htmlFor="validationDefault04">
               State
             </label>
-            <select className="form-select" id="validationDefault04" required>
+            <select className="form-select in4" id="validationDefault04" required>
               <option selected disabled value="">
-                Choose...
+                State
               </option>
               <option value="Andhra Pradesh">Andhra Pradesh</option>
               <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -118,15 +120,15 @@ const Community = () => {
             </select>
           </div>
   
-          <div className="col-10">
+          <div className='in5'>
             <button className="btn btn-primary" type="submit">
               Submit form
             </button>
           </div>
         </form>
+      </div>
       </Layout>
     );
   };
   
-  export default Community;
-  
+  export default CreateCommunity;
