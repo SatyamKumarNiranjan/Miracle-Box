@@ -24,8 +24,10 @@ import SessionInfo from "./pages/session/sessionInfo";
 import DashBoard from "./pages/admin/Dashboard/src/DashBoard";
 import CreateCommunity from "./pages/admin/createCommunity";
 import AttendeeSession from "./pages/admin/attendeeSession";
+import CommunityPage from "./pages/admin/createCommunity";
+import Community from "./pages/admin/Community";
 // import Doughnut from "./pages/admin/Dashboard/src/Doughnut";
-
+import fetchCommunityData from "./pages/admin/Community";
 function App() {
   const {loading} = useSelector(state => state.alerts)
   return (
@@ -67,7 +69,14 @@ function App() {
         <Route path="/admin/community" 
           element={
             <ProtectedRoutes>
-              <CreateCommunity />
+              <CommunityPage />
+            </ProtectedRoutes>
+          } 
+        />   
+          <Route path="/createcommunity" 
+          element={
+            <ProtectedRoutes>
+             <Community/>
             </ProtectedRoutes>
           } 
         />   

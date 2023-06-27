@@ -67,9 +67,9 @@ const AttendeeProfile = () => {
           {user.isVolunteer && 
           <button className="m-1 btn btn-primary" onClick = {()=> Navigate(`/doctor/updateProfile/${id}`)}>Update</button> 
           } 
-          {user.isAdmin && 
+          
           <button className="mt-1 btn btn-primary" onClick = {()=> Navigate(`/admin/sessionAttended/${attendee._id}`)}>See Sessions Attended</button> 
-          } 
+           
 
         </div>
       </div>
